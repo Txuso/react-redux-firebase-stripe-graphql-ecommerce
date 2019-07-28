@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"amatiasq.sort-imports",
+		"mrmlnc.vscode-csscomb",
+		"esbenp.prettier-vscode",
+		"ms-vscode.vscode-typescript-tslint-plugin",
+		"shinnn.stylelint",
+		"mkaufman.htmlhint",
+		"eamodio.gitlens"
+	]
+}

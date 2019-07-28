@@ -1,0 +1,18 @@
+{
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,
+	"css.validate": false,
+	"scss.validate": false,
+	"stylelint.enable": true,
+	"html.format.enable": true,
+	"html.format.wrapAttributes": "force",
+	"html.format.contentUnformatted": "pre",
+	"csscomb.formatOnSave": true,
+	"csscomb.syntaxAssociations": {
+		"postcss": "scss"
+	},
+	"csscomb.preset": "./csscomb.conf.json"
+}
