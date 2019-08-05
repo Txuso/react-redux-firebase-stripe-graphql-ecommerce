@@ -11,6 +11,11 @@
 	height: 340px;
 	flex-direction: column;
 
+	.empty-message {
+		margin: 50px auto;
+		font-size: 18px;
+	}
+
 	.cart-items {
 		display: flex;
 		height: 240px;
