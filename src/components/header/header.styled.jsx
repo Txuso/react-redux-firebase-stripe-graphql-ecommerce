@@ -1,11 +1,6 @@
-import styled, { css } from "styled-components";
-
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-const OptionContainerStyles = css`
-  cursor: pointer;
-  padding: 10px 15px;
-`;
 export const HeaderContainer = styled.div`
   display: flex;
   margin-bottom: 25px;
