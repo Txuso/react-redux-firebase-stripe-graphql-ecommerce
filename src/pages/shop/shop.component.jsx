@@ -23,11 +23,13 @@ class ShopPage extends React.Component {
     const { updateCollections } = this.props;
     const collectionRef = firestore.collection("collections");
 
-    collectionRef.onSnapshot(snapShot => {
+    collectionRef.get().then(snapShot => {
       const collectionsMap = convertCollectionsSnapshotToMap(snapShot);
       updateCollections(collectionsMap);
       this.setState({ loading: false });
     });
+
+    // REST API FORMAT: fetch('https://firestore.googleapis.com/v1/projects/ecommerce-react-dcb3f/databases/(default)/documents/collections').then(response => response.json())
   }
 
   render() {
