@@ -54,8 +54,6 @@ export const addCollectionAndDocuments = async (
     batch.set(newDocRef, object);
   });
 
-  console.log("dame", objectsToAdd);
-
   return await batch.commit();
 };
 
@@ -80,9 +78,9 @@ export const auth = firebase.auth();
 
 export const firestore = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
 // Always show google email accounts popup
-provider.setCustomParameters({ prompt: "select_account" });
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+googleProvider.setCustomParameters({ prompt: "select_account" });
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
 export default signInWithGoogle;
