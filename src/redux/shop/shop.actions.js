@@ -5,14 +5,14 @@ import {
 
 import ShopActionsTypes from "./shop.types";
 
-export const getCollections = () => ({
+export const getCollectionsStart = () => ({
   type: ShopActionsTypes.GET_COLLECTIONS
 });
 
 export const getCollectionsAsync = () => {
   return dispatch => {
     const collectionRef = firestore.collection("collections");
-    dispatch(getCollections());
+    dispatch(getCollectionsStart());
 
     collectionRef
       .get()
