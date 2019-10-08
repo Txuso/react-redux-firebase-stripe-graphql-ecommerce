@@ -1,39 +1,28 @@
-import CollectionsContainer from "../collection/collection.container";
-import CollectionsOverviewContainer from "../../components/collections-overview/collections-overview.container";
-import React from "react";
-import { Route } from "react-router-dom";
-import { connect } from "react-redux";
-import { getCollectionsStart } from "../../redux/shop/shop.actions";
+import React, { useEffect } from 'react';
 
-class ShopPage extends React.Component {
-  componentDidMount() {
-    const { getCollectionsStart } = this.props;
-    getCollectionsStart();
-  }
+import CollectionsContainer from '../collection/collection.container';
+import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container';
+import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getCollectionsStart } from '../../redux/shop/shop.actions';
 
-  render() {
-    const { match } = this.props;
+const ShopPage = ({ getCollectionsStart, match }) => {
+	useEffect(
+		() => {
+			getCollectionsStart();
+		},
+		[ getCollectionsStart ]
+	);
 
-    return (
-      <div className="shop-page">
-        <Route
-          exact
-          path={`${match.path}`}
-          component={CollectionsOverviewContainer}
-        />
-        <Route
-          path={`${match.path}/:collectionId`}
-          component={CollectionsContainer}
-        />
-      </div>
-    );
-  }
-}
+	return (
+		<div className="shop-page">
+			<Route exact path={`${match.path}`} component={CollectionsOverviewContainer} />
+			<Route path={`${match.path}/:collectionId`} component={CollectionsContainer} />
+		</div>
+	);
+};
 
-const mapDispatchToProps = dispatch => ({
-  getCollectionsStart: () => dispatch(getCollectionsStart())
+const mapDispatchToProps = (dispatch) => ({
+	getCollectionsStart: () => dispatch(getCollectionsStart())
 });
-export default connect(
-  null,
-  mapDispatchToProps
-)(ShopPage);
+export default connect(null, mapDispatchToProps)(ShopPage);
