@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import CheckoutPage from './pages/checkout/checkout.component';
+import ContactPage from './pages/contact/contact.component';
 import { GlobalStyle } from './global.styles';
 import Header from './components/header/header.component';
 import HomePage from './pages/homepage/homepage.component';
@@ -27,6 +28,7 @@ const App = ({ checkUserSession, currentUser }) => {
 			<Switch>
 				<Route exact path="/" component={HomePage} />
 				<Route path="/shop" component={ShopPage} />
+				<Route path="/contact" component={ContactPage} />
 				<Route exact path="/checkout" component={CheckoutPage} />
 				<Route exact path="/signin" render={() => (currentUser ? <Redirect to="/" /> : <SignInSignUpPage />)} />
 			</Switch>
